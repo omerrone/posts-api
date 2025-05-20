@@ -11,6 +11,7 @@ A RESTful API built with Python and FastAPI for managing blog posts. The backend
 - PostgreSQL as the database
 - Pydantic for request/response validation
 - Modular and extensible project structure
+- 🔐 JWT-based authentication with OAuth2
 
 ## 🛠 Tech Stack
 
@@ -20,18 +21,24 @@ A RESTful API built with Python and FastAPI for managing blog posts. The backend
 - SQLAlchemy
 - Alembic
 - Pydantic
+- JWT + OAuth2
 
 ## 📂 Project Structure
 ```
 posts-api/
 ├── app/
 │   ├── main.py          # Entry point
-│   ├── models/          # SQLAlchemy models
+│   ├── models.py        # SQLAlchemy models
 │   ├── routes/          # Route definitions
-│   ├── schemas/         # Pydantic schemas
+│   │   ├── post.py      # Posts definitions
+│   │   ├── user.py      # Users definitions
+│   │   ├── vote.py      # Votes definitions
+│   │   ├── auth.py      # Auth definitions
+│   ├── schemas.py       # Pydantic schemas
 ├── alembic/             # Alembic migrations
 ├── alembic.ini          # Alembic config
 ├── requirements.txt     # Dependencies
+├── Dockerfile           # Dockerfile config
 └── README.md
 ```
 
